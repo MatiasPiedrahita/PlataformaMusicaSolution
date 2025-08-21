@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlataformaMusicaLib", "PlataformaMusicaLib\PlataformaMusicaLib.csproj", "{29BD093E-A66A-422D-96AF-6BF1D40C40EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlataformaMusicaApp", "PlataformaMusicaApp\PlataformaMusicaApp.csproj", "{86CFE1A5-D135-4B92-8A8F-9C3784A54FAE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{29BD093E-A66A-422D-96AF-6BF1D40C40EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29BD093E-A66A-422D-96AF-6BF1D40C40EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29BD093E-A66A-422D-96AF-6BF1D40C40EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29BD093E-A66A-422D-96AF-6BF1D40C40EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86CFE1A5-D135-4B92-8A8F-9C3784A54FAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86CFE1A5-D135-4B92-8A8F-9C3784A54FAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86CFE1A5-D135-4B92-8A8F-9C3784A54FAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86CFE1A5-D135-4B92-8A8F-9C3784A54FAE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

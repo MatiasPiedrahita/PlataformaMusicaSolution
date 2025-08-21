@@ -1,0 +1,11 @@
+C:\Users\Matias\RiderProjects\PlataformaMusicaSolution\PlataformaMusicaLib\obj\Debug\net9.0\PlataformaMusicaLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Matias\RiderProjects\PlataformaMusicaSolution\PlataformaMusicaLib\obj\Debug\net9.0\PlataformaMusicaLib.AssemblyInfoInputs.cache
+C:\Users\Matias\RiderProjects\PlataformaMusicaSolution\PlataformaMusicaLib\obj\Debug\net9.0\PlataformaMusicaLib.AssemblyInfo.cs
+C:\Users\Matias\RiderProjects\PlataformaMusicaSolution\PlataformaMusicaLib\obj\Debug\net9.0\PlataformaMusicaLib.csproj.CoreCompileInputs.cache
+C:\Users\Matias\RiderProjects\PlataformaMusicaSolution\PlataformaMusicaLib\bin\Debug\net9.0\PlataformaMusicaLib.deps.json
+C:\Users\Matias\RiderProjects\PlataformaMusicaSolution\PlataformaMusicaLib\bin\Debug\net9.0\PlataformaMusicaLib.dll
+C:\Users\Matias\RiderProjects\PlataformaMusicaSolution\PlataformaMusicaLib\bin\Debug\net9.0\PlataformaMusicaLib.pdb
+C:\Users\Matias\RiderProjects\PlataformaMusicaSolution\PlataformaMusicaLib\obj\Debug\net9.0\PlataformaMusicaLib.dll
+C:\Users\Matias\RiderProjects\PlataformaMusicaSolution\PlataformaMusicaLib\obj\Debug\net9.0\refint\PlataformaMusicaLib.dll
+C:\Users\Matias\RiderProjects\PlataformaMusicaSolution\PlataformaMusicaLib\obj\Debug\net9.0\PlataformaMusicaLib.pdb
+C:\Users\Matias\RiderProjects\PlataformaMusicaSolution\PlataformaMusicaLib\obj\Debug\net9.0\ref\PlataformaMusicaLib.dll
