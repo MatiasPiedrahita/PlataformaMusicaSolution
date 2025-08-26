@@ -12,7 +12,7 @@ namespace PlataformaMusicaApp
 
         static void Main(string[] args)
         {
-            Console.WriteLine("🎵 ===== BIENVENIDO A LA PLATAFORMA MUSICAL ===== 🎵\n");
+            Console.WriteLine("===== BIENVENIDO A MUSIC STREAM =====\n");
             
             // Inicializar plataforma
             plataforma = new PlataformaMusica("MusicStream");
@@ -26,7 +26,7 @@ namespace PlataformaMusicaApp
 
         static void CargarDatosDePrueba()
         {
-            Console.WriteLine("📦 Cargando datos de prueba...\n");
+            Console.WriteLine("Cargando datos de prueba...\n");
 
             // Crear artistas
             var shakira = new Artista("Shakira", "shakira@music.com", "Cantante colombiana internacional");
@@ -75,7 +75,7 @@ namespace PlataformaMusicaApp
             albumShakira.AgregarCancion(cancion2);
             plataforma.Catalogo.AgregarAlbum(albumShakira);
 
-            Console.WriteLine("✅ Datos de prueba cargados exitosamente\n");
+            Console.WriteLine("Datos de prueba cargados exitosamente\n");
         }
 
         static void MostrarMenu()
@@ -83,16 +83,16 @@ namespace PlataformaMusicaApp
             int opcion;
             do
             {
-                Console.WriteLine("\n🎵 ===== MENÚ PRINCIPAL =====");
-                Console.WriteLine("1. 👤 Registrar Usuario");
-                Console.WriteLine("2. 🎧 Buscar y Reproducir Canción");
-                Console.WriteLine("3. 📊 Ver Estadísticas");
-                Console.WriteLine("4. 🎯 Ver Recomendaciones");
-                Console.WriteLine("5. 📻 Generar Radio por Artista");
-                Console.WriteLine("6. 🔍 Ver Catálogo Completo");
-                Console.WriteLine("7. 🎵 Flujo Completo: Usuario y Playlist");
-                Console.WriteLine("8. 👨‍🎤 Flujo Completo: Artista y Seguidores");
-                Console.WriteLine("0. ❌ Salir");
+                Console.WriteLine("\n===== MENÚ PRINCIPAL =====");
+                Console.WriteLine("1. Registrar Usuario");
+                Console.WriteLine("2.Buscar y Reproducir Canción");
+                Console.WriteLine("3.Ver Estadísticas");
+                Console.WriteLine("4.Ver Recomendaciones");
+                Console.WriteLine("5.Generar Radio por Artista");
+                Console.WriteLine("6.Ver Catálogo Completo");
+                Console.WriteLine("7.Flujo Completo: Usuario y Playlist");
+                Console.WriteLine("8.Flujo Completo: Artista y Seguidores");
+                Console.WriteLine("0.Salir");
                 Console.Write("\nSelecciona una opción: ");
 
                 if (int.TryParse(Console.ReadLine(), out opcion))
@@ -108,13 +108,13 @@ namespace PlataformaMusicaApp
                         case 6: MostrarCatalogo(); break;
                         case 7: FlujoCompletoUsuarioPlaylist(); break;
                         case 8: FlujoCompletoArtistaSeguidores(); break;
-                        case 0: Console.WriteLine("👋 ¡Gracias por usar la plataforma!"); break;
-                        default: Console.WriteLine("❌ Opción inválida"); break;
+                        case 0: Console.WriteLine("¡Gracias por usar la plataforma!"); break;
+                        default: Console.WriteLine("Opción inválida"); break;
                     }
                 }
                 else
                 {
-                    Console.WriteLine("❌ Por favor ingresa un número válido");
+                    Console.WriteLine("Por favor ingresa un número válido");
                     opcion = -1;
                 }
 
@@ -130,27 +130,27 @@ namespace PlataformaMusicaApp
         // FLUJO 1: Registrar Usuario y Crear Playlist
         static void FlujoCompletoUsuarioPlaylist()
         {
-            Console.WriteLine("🎯 === FLUJO COMPLETO 1: REGISTRAR USUARIO Y CREAR PLAYLIST ===\n");
+            Console.WriteLine("=== FLUJO COMPLETO 1: REGISTRAR USUARIO Y CREAR PLAYLIST ===\n");
 
             // Paso 1: Registrar usuario
-            Console.Write("👤 Ingresa el nombre del usuario: ");
+            Console.Write("Ingresa el nombre del usuario: ");
             string nombre = Console.ReadLine();
-            Console.Write("📧 Ingresa el email: ");
+            Console.Write("Ingresa el email: ");
             string email = Console.ReadLine();
 
             var usuario = new Usuario(nombre, email);
             
             if (plataforma.RegistrarUsuario(usuario))
             {
-                Console.WriteLine("\n⭐ ¿Quieres ser usuario Premium? (s/n): ");
+                Console.WriteLine("\n¿Quieres ser usuario Premium? (s/n): ");
                 if (Console.ReadLine()?.ToLower() == "s")
                 {
                     usuario.Premium = true;
-                    Console.WriteLine("✅ Cuenta actualizada a Premium");
+                    Console.WriteLine("Cuenta actualizada a Premium");
                 }
 
                 // Paso 2: Seguir artistas
-                Console.WriteLine("\n👨‍🎤 Artistas disponibles para seguir:");
+                Console.WriteLine("\nArtistas disponibles para seguir:");
                 for (int i = 0; i < plataforma.Catalogo.Artistas.Count; i++)
                 {
                     Console.WriteLine($"{i + 1}. {plataforma.Catalogo.Artistas[i].Nombre}");
@@ -164,7 +164,7 @@ namespace PlataformaMusicaApp
                 }
 
                 // Paso 3: Crear playlist
-                Console.Write("\n🎵 Nombre de tu nueva playlist: ");
+                Console.Write("\nNombre de tu nueva playlist: ");
                 string nombrePlaylist = Console.ReadLine();
                 var playlist = usuario.CrearPlaylist(nombrePlaylist);
 
@@ -188,32 +188,32 @@ namespace PlataformaMusicaApp
                 }
 
                 // Paso 5: Mostrar información final
-                Console.WriteLine("\n📋 === RESUMEN DEL USUARIO ===");
+                Console.WriteLine("\n=== RESUMEN DEL USUARIO ===");
                 Console.WriteLine(usuario.GetInfo());
 
-                Console.WriteLine("\n✅ ¡Flujo completado exitosamente!");
+                Console.WriteLine("\n¡Flujo completado exitosamente!");
             }
         }
 
         // FLUJO 2: Crear Artista y Gestionar Seguidores
         static void FlujoCompletoArtistaSeguidores()
         {
-            Console.WriteLine("🎯 === FLUJO COMPLETO 2: ARTISTA Y GESTIÓN DE SEGUIDORES ===\n");
+            Console.WriteLine("=== FLUJO COMPLETO 2: ARTISTA Y GESTIÓN DE SEGUIDORES ===\n");
 
             // Paso 1: Crear nuevo artista
-            Console.Write("👨‍🎤 Nombre del artista: ");
+            Console.Write("Nombre del artista: ");
             string nombre = Console.ReadLine();
-            Console.Write("📧 Email del artista: ");
+            Console.Write("Email del artista: ");
             string email = Console.ReadLine();
-            Console.Write("📝 Biografía: ");
+            Console.Write("Biografía: ");
             string biografia = Console.ReadLine();
 
             var artista = new Artista(nombre, email, biografia);
             plataforma.Catalogo.Artistas.Add(artista);
-            Console.WriteLine("✅ Artista registrado exitosamente");
+            Console.WriteLine("Artista registrado exitosamente");
 
             // Paso 2: Crear canciones para el artista
-            Console.WriteLine("\n🎵 Vamos a crear canciones para el artista:");
+            Console.WriteLine("\nVamos a crear canciones para el artista:");
             
             for (int i = 1; i <= 2; i++)
             {
@@ -243,7 +243,7 @@ namespace PlataformaMusicaApp
             }
 
             // Paso 3: Crear álbum
-            Console.Write("\n🎼 Nombre del álbum: ");
+            Console.Write("\nNombre del álbum: ");
             string nombreAlbum = Console.ReadLine();
             
             Console.WriteLine("Tipos de álbum:");
@@ -273,7 +273,7 @@ namespace PlataformaMusicaApp
             // Paso 4: Simular seguidores
             if (plataforma.UsuariosRegistrados.Count > 0)
             {
-                Console.WriteLine("\n👥 Usuarios disponibles para seguir al artista:");
+                Console.WriteLine("\nUsuarios disponibles para seguir al artista:");
                 for (int i = 0; i < plataforma.UsuariosRegistrados.Count; i++)
                 {
                     Console.WriteLine($"{i + 1}. {plataforma.UsuariosRegistrados[i].Nombre}");
@@ -289,7 +289,7 @@ namespace PlataformaMusicaApp
             }
             else
             {
-                Console.WriteLine("\n📝 No hay usuarios registrados. El artista será seguido automáticamente por usuarios de prueba.");
+                Console.WriteLine("\nNo hay usuarios registrados. El artista será seguido automáticamente por usuarios de prueba.");
                 // Crear un usuario de prueba
                 var usuarioPrueba = new Usuario("Fan #1", "fan1@test.com");
                 plataforma.RegistrarUsuario(usuarioPrueba);
@@ -297,20 +297,20 @@ namespace PlataformaMusicaApp
             }
 
             // Paso 5: Mostrar estadísticas del artista
-            Console.WriteLine("\n📊 === INFORMACIÓN DEL ARTISTA ===");
+            Console.WriteLine("\n=== INFORMACIÓN DEL ARTISTA ===");
             Console.WriteLine(artista.GetInfo());
 
             // Paso 6: Generar radio del artista
             plataforma.GenerarRadio(artista);
 
-            Console.WriteLine("\n✅ ¡Flujo completado exitosamente!");
+            Console.WriteLine("\n¡Flujo completado exitosamente!");
         }
 
         static void RegistrarUsuario()
         {
-            Console.Write("👤 Nombre: ");
+            Console.Write("Nombre: ");
             string nombre = Console.ReadLine();
-            Console.Write("📧 Email: ");
+            Console.Write("Email: ");
             string email = Console.ReadLine();
 
             var usuario = new Usuario(nombre, email);
@@ -319,7 +319,7 @@ namespace PlataformaMusicaApp
 
         static void BuscarYReproducirCancion()
         {
-            Console.Write("🔍 Ingresa el título de la canción: ");
+            Console.Write("Ingresa el título de la canción: ");
             string query = Console.ReadLine();
             var canciones = plataforma.BuscarCancion(query);
 
@@ -344,11 +344,11 @@ namespace PlataformaMusicaApp
         {
             if (plataforma.UsuariosRegistrados.Count == 0)
             {
-                Console.WriteLine("❌ No hay usuarios registrados");
+                Console.WriteLine("No hay usuarios registrados");
                 return;
             }
 
-            Console.WriteLine("👥 Usuarios disponibles:");
+            Console.WriteLine("Usuarios disponibles:");
             for (int i = 0; i < plataforma.UsuariosRegistrados.Count; i++)
             {
                 Console.WriteLine($"{i + 1}. {plataforma.UsuariosRegistrados[i].Nombre}");
@@ -363,7 +363,7 @@ namespace PlataformaMusicaApp
                 
                 if (recomendaciones.Count > 0)
                 {
-                    Console.WriteLine("\n🎵 Recomendaciones:");
+                    Console.WriteLine("\nRecomendaciones:");
                     foreach (var cancion in recomendaciones)
                     {
                         Console.WriteLine($"   • {cancion.Titulo} - {cancion.Artista.Nombre} ({cancion.Genero})");
@@ -376,11 +376,11 @@ namespace PlataformaMusicaApp
         {
             if (plataforma.Catalogo.Artistas.Count == 0)
             {
-                Console.WriteLine("❌ No hay artistas en el catálogo");
+                Console.WriteLine("No hay artistas en el catálogo");
                 return;
             }
 
-            Console.WriteLine("👨‍🎤 Artistas disponibles:");
+            Console.WriteLine("Artistas disponibles:");
             for (int i = 0; i < plataforma.Catalogo.Artistas.Count; i++)
             {
                 Console.WriteLine($"{i + 1}. {plataforma.Catalogo.Artistas[i].Nombre}");
@@ -397,14 +397,14 @@ namespace PlataformaMusicaApp
 
         static void MostrarCatalogo()
         {
-            Console.WriteLine("📚 === CATÁLOGO MUSICAL ===");
-            Console.WriteLine($"\n🎵 CANCIONES ({plataforma.Catalogo.Canciones.Count}):");
+            Console.WriteLine("=== CATÁLOGO MUSICAL ===");
+            Console.WriteLine($"\nCANCIONES ({plataforma.Catalogo.Canciones.Count}):");
             foreach (var cancion in plataforma.Catalogo.Canciones)
             {
                 Console.WriteLine($"   • {cancion.Titulo} - {cancion.Artista.Nombre} ({cancion.Genero}) [{cancion.GetDuracionFormateada()}]");
             }
 
-            Console.WriteLine($"\n👨‍🎤 ARTISTAS ({plataforma.Catalogo.Artistas.Count}):");
+            Console.WriteLine($"\nARTISTAS ({plataforma.Catalogo.Artistas.Count}):");
             foreach (var artista in plataforma.Catalogo.Artistas)
             {
                 Console.WriteLine($"   • {artista.Nombre} - {artista.Canciones.Count} canciones, {artista.Seguidores.Count} seguidores");
@@ -412,7 +412,7 @@ namespace PlataformaMusicaApp
 
             if (plataforma.Catalogo.Albumes.Count > 0)
             {
-                Console.WriteLine($"\n🎼 ÁLBUMES ({plataforma.Catalogo.Albumes.Count}):");
+                Console.WriteLine($"\nÁLBUMES ({plataforma.Catalogo.Albumes.Count}):");
                 foreach (var album in plataforma.Catalogo.Albumes)
                 {
                     Console.WriteLine($"   • {album.Titulo} - {album.Artista.Nombre} ({album.Tipo}) - {album.Canciones.Count} canciones");
