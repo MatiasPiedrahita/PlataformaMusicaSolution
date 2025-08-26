@@ -169,7 +169,7 @@ namespace PlataformaMusicaApp
                 var playlist = usuario.CrearPlaylist(nombrePlaylist);
 
                 // Paso 4: Agregar canciones a la playlist
-                Console.WriteLine("\n🎵 Canciones disponibles:");
+                Console.WriteLine("\nCanciones disponibles:");
                 for (int i = 0; i < Math.Min(5, plataforma.Catalogo.Canciones.Count); i++)
                 {
                     var cancion = plataforma.Catalogo.Canciones[i];
